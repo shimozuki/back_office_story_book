@@ -47,9 +47,8 @@ class AdminGalleryController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'image_title' => 'required|max:200',
-            'image_desc' => 'required|max:25',
-            'image' => 'required|mimes:jpeg,bmp,png,jpg|max:8000',
+            'image_title' => 'required',
+            'image' => 'required|mimes:jpeg,bmp,png,jpg|max:80000',
         ]);
         $inputs = $request->all();
 
@@ -64,8 +63,6 @@ class AdminGalleryController extends Controller
         }
         GalleryModel::create($inputs);
         return redirect(route('gallery.index'));
-
-        //
     }
 
 

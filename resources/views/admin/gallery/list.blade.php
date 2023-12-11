@@ -2,7 +2,7 @@
 @section('content')
   <div class="row">
     <div class="col-lg-12">
-      <h1 class="page-header">Gallery</h1>
+      <h1 class="page-header">About</h1>
     </div>
   </div>
 <section>
@@ -15,19 +15,19 @@
   <table class="table">
     <thead>
       <tr>
-        <th>#</th>
-        <th>Title</th>
-        <th>Status</th>
+        <th>No</th>
+        <th>About</th>
+        <th>Image</th>
         <th>Actions</th>
       </tr>
     </thead>
     <tbody>
       @foreach($galleries as $gallery)
       <tr>
-        <td>{{$gallery->id}}</td>
+      <td style="width: 20%;">{{$gallery->id}}</td>
         <td>{{$gallery->image_title}}</td>
         
-        <td>@if($gallery->active==1) <span class="label label-success">Active</span> @else <span class="label label-danger">Deactivated</span> @endif</td>
+        <td><img src="{{ asset($gallery->image)}}" alt="" width="60" height="6  0"></td>
         <td>
           <a href="{{route('gallery.edit',$gallery->id)}}" class="btn btn-primary">
             <span class="glyphicon glyphicon-edit"></span>

@@ -1,26 +1,15 @@
 
 
 <div class="form-group{{ $errors->has('image_title') ? ' has-error' : '' }}">
-    {{Form::label('image_title', 'title *')}}
-    {{Form::text("image_title", null, array("class"=>"form-control","id"=>"image_title"))}}
+    {{Form::label('image_title', 'Deskripsi *')}}
+
+    {{Form::textarea("image_title", null, array("class"=>"form-control","id"=>"image_title"))}}
     @if ($errors->has('image_title'))
         <span class="help-block">
                 <strong>{{ $errors->first('image_title') }}</strong>
         </span>
     @endif
 </div>
-
-<div class="form-group{{ $errors->has('image_desc') ? ' has-error' : '' }}">
-    {{Form::label('image_desc', 'Short Description')}}
-    {{Form::text("image_desc", null, array("class"=>"form-control","id"=>"image_desc"))}}
-    @if ($errors->has('image_desc'))
-        <span class="help-block">
-                <strong>{{ $errors->first('image_desc') }}</strong>
-        </span>
-    @endif
-</div>
-
-
 
 <div class="form-group{{ $errors->has('image') ? ' has-error ':''}}">
 {{Form::label('image','image * ')}}
@@ -33,7 +22,7 @@
     @endif
 </div>
 
-<div class="form-group{{ $errors->has('active') ? ' has-error' : '' }}">
+<!-- <div class="form-group{{ $errors->has('active') ? ' has-error' : '' }}">
     <label>Active : </label>
     <label class="radio-inline">
         {{Form::radio('active','1',true,['id'=>'yes'])}} Yes
@@ -46,7 +35,7 @@
                 <strong>{{ $errors->first('active') }}</strong>
         </span>
     @endif
-</div>
+</div> -->
 
 @section('page_scripts')
     <script type="text/javascript">

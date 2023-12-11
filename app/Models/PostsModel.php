@@ -19,7 +19,7 @@ class PostsModel extends Model
      *
      * @var array
      */
-    protected $fillable = ['title','category_id','slug','summary','content','featured_image','featured_audio','active','user_id'];
+    protected $fillable = ['title','cerita_indo','cerita_swq','featured_image','background','featured_audio','active','user_id'];
 
     /**
      * Belongs to one relationship

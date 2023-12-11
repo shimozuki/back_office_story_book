@@ -20,8 +20,8 @@ class GalleryModel extends Model
      */
     protected $fillable = ['user_id', 'image_title','image_desc', 'image', 'active'];
 
-    public function getImageAttribute($value)
-    {
-        return new ImagePath($value);
-    }
+    // public function getImageAttribute($value)
+    // {
+    //     return new ImagePath($value);
+    // }
 }

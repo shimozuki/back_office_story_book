@@ -89,20 +89,25 @@ class AdminPostsController extends Controller
 
         $this->validate($request, [
             'title' => 'required',
-            'content' => 'required',
+            'cerita_indo' => 'required',
+            'cerita_swq' => 'required',
             'active' => 'required',
-            'category_id' => 'required|numeric',
             'featured_image' => 'required',
+            'background' => 'required',
             'featured_audio' => 'required|mimes:mp3,wav',
         ]);
         $inputs = $request->all();
         $inputs['user_id'] = Auth::user()->id;
-        $inputs['slug'] = Str::slug($inputs['title'], '-');
 
 
         if ($inputs['featured_image']) {
             $image_path = uploadWithThumb($inputs['featured_image'], 'images/blog');
             $inputs['featured_image'] = $image_path;
+        }
+
+        if ($inputs['background']) {
+            $image_path = uploadWithThumb($inputs['background'], 'images/blog');
+            $inputs['background'] = $image_path;
         }
 
         if ($inputs['featured_audio']) {
@@ -154,7 +159,7 @@ class AdminPostsController extends Controller
 
         $this->validate($request, [
             'title' => 'required',
-            'content' => 'required',
+            'cerita_indo' => 'required',
             'active' => 'required',
             'categories' => 'required|array|min:1'
         ]);

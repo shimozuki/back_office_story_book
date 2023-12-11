@@ -10,6 +10,7 @@ use App\Http\Controllers\About\AboutUsController;
 use App\Http\Controllers\Contact\ContactUsController;
 use App\Http\Controllers\Gallery\GalleryController;
 use App\Http\Controllers\Admin\Comments\AdminCommentsController;
+use App\Http\Controllers\AboutController;
 
 
 /*
@@ -61,5 +62,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'App\Http\Controllers\Admin'],
     Route::get('tags-suggest',"Tags\AdminTagsController@showTagsSuggestions");
     Route::resource('users','Users\AdminUsersController');
 
+    Route::get('/indexBaout', [AboutController::class, 'index']);
+    Route::get('/create', [AboutController::class, 'create']);
 });
 
